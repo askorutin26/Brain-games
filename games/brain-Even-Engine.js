@@ -1,42 +1,36 @@
 import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
 
-let counter = 0;
-const randomNumberFunction = () => { return Math.floor(Math.random() * 100); }
-
 const playBrainEven = () => {
-    let randomNumber = randomNumberFunction();
-    const innerLogic = () => {
-        let rightAnswer;
-        if (randomNumber % 2 === 0) { rightAnswer = 'yes'; } else { rightAnswer = 'no'; }
+  const howToPlay = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const wrongAnswerMessage = 'is wrong answer ;(. Correct answer was';
+  const randomNumberGenerator = () => Math.floor(Math.random() * 100);
+  const userName = greetUser();
 
-        if (counter === 3) { return (console.log(`Congratulations, ${name}!`)); }
+  console.log(howToPlay);
 
-        console.log(`Question: ${randomNumber}`);
-        const answer = readlineSync.question('Your answer: ');
-        if (randomNumber % 2 === 0 && answer === 'yes') {
-            counter += 1;
-            console.log('Correct!');
-            randomNumber = randomNumberFunction();
-            innerLogic();
-        } else if (randomNumber % 2 !== 0 && answer === 'no') {
-            counter += 1;
-            console.log('Correct!');
-            randomNumber = randomNumberFunction();
-            innerLogic();
-        } else if (answer !== 'yes' || answer !== 'no') {
-            console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-            console.log(`Let's try again, ${name}!`);
-        } else if (answer === 'yes') {
-            console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
-            console.log(`Let's try again, ${name}!`);
-        } else if (answer == 'no') {
-            console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.`);
-            console.log(`Let's try again, ${name}!`);
-        }
+  for (let i = 0; i < 3; i += 1) {
+    const currentNumber = randomNumberGenerator();
+
+    const rightAnswer = () => {
+      if (currentNumber % 2 === 0) {
+        return 'yes';
+      }
+      return 'no';
     };
-    const name = greetUser();
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
-    innerLogic();
+
+    console.log(`Question: ${currentNumber}`);
+
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (userAnswer !== rightAnswer()) {
+      console.log(`${userAnswer} ${wrongAnswerMessage} ${rightAnswer()}.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
+    console.log('Correct!');
+  }
+
+  console.log(`Congratulations, ${userName}!`);
 };
+
 export default playBrainEven;

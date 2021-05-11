@@ -23,7 +23,7 @@ const playBrainEven = () => {
 
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== rightAnswer()) {
-      console.log(`${userAnswer} ${wrongAnswerMessage} ${rightAnswer()}.`);
+      console.log(`'${userAnswer}' ${wrongAnswerMessage} '${rightAnswer()}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }

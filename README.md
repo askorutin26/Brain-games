@@ -6,4 +6,8 @@
 
 [![Node.js CI](https://github.com/askorutin26/frontend-project-lvl1/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/askorutin26/frontend-project-lvl1/actions/workflows/node.js.yml)
 
+How brain-even works:
 https://asciinema.org/a/412987
+
+How brain-calc works:
+https://asciinema.org/a/414233

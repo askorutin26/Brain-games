@@ -1,44 +1,39 @@
 import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
 
-const playBrainCalc = () =>{
-
-
-const howToPlay = 'What is the result of the expression?';
+const playBrainCalc = () => {
+  const howToPlay = 'What is the result of the expression?';
   const wrongAnswerMessage = 'is wrong answer ;(. Correct answer was';
   const randomNumberGenerator = () => Math.floor(Math.random() * 50);
-  const randomNumberGeneratorForIndex=()=>Math.floor(Math.random()*3);
-  
-  const userName = greetUser();
+  const randomNumberGeneratorForIndex = () => Math.floor(Math.random() * 3);
 
-  
+  const userName = greetUser();
 
   console.log(howToPlay);
 
-  for (let i=0;i<3;i+=1){
-    
-const currentIndex = randomNumberGeneratorForIndex();
-const currentRandomNumber=randomNumberGenerator();
-const currentRandomNumber2=randomNumberGenerator();
+  for (let i = 0; i < 3; i += 1) {
+    const currentIndex = randomNumberGeneratorForIndex();
+    const currentRandomNumber = randomNumberGenerator();
+    const currentRandomNumber2 = randomNumberGenerator();
 
-const currentExperssionAsString = [
-  `${currentRandomNumber}+${currentRandomNumber2}`,
-  `${currentRandomNumber}-${currentRandomNumber2}`,
-  `${currentRandomNumber}*${currentRandomNumber2}`
+    const currentExperssionAsString = [
+      `${currentRandomNumber}+${currentRandomNumber2}`,
+      `${currentRandomNumber}-${currentRandomNumber2}`,
+      `${currentRandomNumber}*${currentRandomNumber2}`,
     ];
-const currentExperssionAsResult = [ 
+    const currentExperssionAsResult = [
 
-  currentRandomNumber+currentRandomNumber2,
-  currentRandomNumber-currentRandomNumber2,
-  currentRandomNumber*currentRandomNumber2
-]
+      currentRandomNumber + currentRandomNumber2,
+      currentRandomNumber - currentRandomNumber2,
+      currentRandomNumber * currentRandomNumber2,
+    ];
 
-    const rightAnswer=()=> { return currentExperssionAsResult[currentIndex]};
+    const rightAnswer = () => currentExperssionAsResult[currentIndex];
     console.log(`Question: ${currentExperssionAsString[currentIndex]}`);
-    const userAnswer = readlineSync.question('Your answer: '); 
+    const userAnswer = +readlineSync.question('Your answer: ');
     console.log(rightAnswer());
     console.log(userAnswer);
-    if (userAnswer != rightAnswer()) {
+    if (userAnswer !== rightAnswer()) {
       console.log(`'${userAnswer}' ${wrongAnswerMessage} '${rightAnswer()}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
@@ -48,8 +43,5 @@ const currentExperssionAsResult = [
 
   console.log(`Congratulations, ${userName}!`);
 };
-  
+
 export default playBrainCalc;
-
-
-

@@ -31,8 +31,7 @@ const playBrainCalc = () => {
     const rightAnswer = () => currentExperssionAsResult[currentIndex];
     console.log(`Question: ${currentExperssionAsString[currentIndex]}`);
     const userAnswer = +readlineSync.question('Your answer: ');
-    console.log(rightAnswer());
-    console.log(userAnswer);
+    
     if (userAnswer !== rightAnswer()) {
       console.log(`'${userAnswer}' ${wrongAnswerMessage} '${rightAnswer()}'.`);
       console.log(`Let's try again, ${userName}!`);

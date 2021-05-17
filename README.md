@@ -11,3 +11,6 @@ https://asciinema.org/a/412987
 
 How brain-calc works:
 https://asciinema.org/a/414233
+
+How brain-gcd works:
+https://asciinema.org/a/414543

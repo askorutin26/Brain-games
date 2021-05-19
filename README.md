@@ -14,3 +14,6 @@ https://asciinema.org/a/414233
 
 How brain-gcd works:
 https://asciinema.org/a/414543
+
+How brain-prime works:
+https://asciinema.org/a/415006

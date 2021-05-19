@@ -11,7 +11,11 @@ const playBrainProgression = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
-  const randomDotsPosition = (min, max) => Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) + Math.ceil(min);
+  const randomDotsPosition = (min, max) => {
+    const innerMin = Math.ceil(min);
+    const innerMax = Math.floor(max);
+    return Math.floor(Math.random() * (innerMax - innerMin) + 1) + innerMin;
+  };
   const userName = greetUser();
   console.log(howToPlay);
 

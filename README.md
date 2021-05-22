@@ -9,7 +9,7 @@
 ### How to install:
 $make install 
 
-### Games demonstations:
+### Games demonstrations:
 How brain-even works:
 [![asciicast](https://asciinema.org/a/412987.svg)](https://asciinema.org/a/412987)
 

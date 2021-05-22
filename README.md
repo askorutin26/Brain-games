@@ -1,9 +1,9 @@
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/askorutin26/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/askorutin26/frontend-project-lvl1/actions)
-
+### CodeClimate status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/341dd28fb6f5ec5ad776/maintainability)](https://codeclimate.com/github/askorutin26/frontend-project-lvl1/maintainability)
-
+### Eslint status:
 [![Node.js CI](https://github.com/askorutin26/frontend-project-lvl1/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/askorutin26/frontend-project-lvl1/actions/workflows/node.js.yml)
 
 

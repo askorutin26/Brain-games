@@ -6,10 +6,18 @@
 
 [![Node.js CI](https://github.com/askorutin26/frontend-project-lvl1/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/askorutin26/frontend-project-lvl1/actions/workflows/node.js.yml)
 
+
 ### How to install:
-$make install 
+
+$git clone https://github.com/askorutin26/frontend-project-lvl1.git
+
+$make install
+
+$make link 
+
 
 ### Games demonstrations:
+
 How brain-even works:
 [![asciicast](https://asciinema.org/a/412987.svg)](https://asciinema.org/a/412987)
 

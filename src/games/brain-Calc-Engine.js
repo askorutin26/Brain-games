@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import greetUser from '../src/cli.js';
+import greetUser from '../cli.js';
 
 const playBrainCalc = () => {
   const howToPlay = 'What is the result of the expression?';

@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import greetUser from '../src/cli.js';
+import greetUser from '../cli.js';
 
 const playBrainProgression = () => {
   const howToPlay = 'What number is missing in the progression?';

@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import greetUser from '../src/cli.js';
+import greetUser from '../cli.js';
 
 const playGcd = () => {
   const howToPlay = 'Find the greatest common divisor of given numbers.';

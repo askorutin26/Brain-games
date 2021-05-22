@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import greetUser from '../src/cli.js';
+import greetUser from '../cli.js';
 
 const playBrainEven = () => {
   const howToPlay = 'Answer "yes" if the number is even, otherwise answer "no".';

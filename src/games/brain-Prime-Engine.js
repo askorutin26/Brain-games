@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import greetUser from '../src/cli.js';
+import greetUser from '../cli.js';
 
 const playBrainPrime = () => {
   const howToPlay = 'Answer "yes" if given number is prime. Otherwise answer "no".';

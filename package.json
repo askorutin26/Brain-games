@@ -2,15 +2,14 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/askorutin26/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/askorutin26/frontend-project-lvl1/actions)",
+  "description": "5 arithmetic games available for playing on the console",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
     "brain-gcd": "bin/brain-gcd.js",
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
-  },
-  "main": "index.js",
+  },  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/askorutin26/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Artem Elgadzhiev",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/askorutin26/frontend-project-lvl1/issues"

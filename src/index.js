@@ -1,31 +1,26 @@
 import readlineSync from 'readline-sync';
-import greetUser from '../src/cli.js';
-import getRandomNumber from './random-number-generator.js';
+import greetUser from './cli.js';
 
-const mainEngine = (howToPlay,min,max,rightAnswer) => {
-  
+const mainEngine = (howToPlay, value, rightAnswer) => {
+  const wrongAnswerMessage = 'is wrong answer ;(. Correct answer was';
 
-const wrongAnswerMessage = 'is wrong answer ;(. Correct answer was';
+  const userName = greetUser();
+  console.log(howToPlay);
 
-
-const userName = greetUser();
-console.log(howToPlay);
-
-for (let i = 0; i<3; i+=1)
-{
-  
-    const currentNumber = getRandomNumber(min,max);
-    console.log(`Question: ${currentNumber}`);
+  for (let i = 0; i < 3; i += 1) {
+    const currentExpression = value();
+    console.log(currentExpression);
+    console.log(`Question: ${currentExpression}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer !== rightAnswer(currentNumber)) {
-        console.log(`'${userAnswer}' ${wrongAnswerMessage} '${rightAnswer(currentNumber)}'.`);
-        console.log(`Let's try again, ${userName}!`);
-        return;
-      }
-      console.log('Correct!');
+    if (userAnswer !== rightAnswer(currentExpression)) {
+      console.log(`'${userAnswer}' ${wrongAnswerMessage} '${rightAnswer(currentExpression)}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
-  
-    console.log(`Congratulations, ${userName}!`);
-}
+    console.log('Correct!');
+  }
+
+  console.log(`Congratulations, ${userName}!`);
+};
 
 export default mainEngine;

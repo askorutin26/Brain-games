@@ -9,8 +9,6 @@ const mainEngine = (howToPlay, value, rightAnswer) => {
 
   for (let i = 0; i < 3; i += 1) {
     const currentExpression = value();
-    console.log(rightAnswer(currentExpression));
-    console.log(currentExpression);
     console.log(`Question: ${currentExpression}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== rightAnswer(currentExpression)) {

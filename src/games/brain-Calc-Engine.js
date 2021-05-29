@@ -1,45 +1,23 @@
 import mainEngine from '../index.js';
+import getRandomExpression from '../random-Expression-Generator.js';
 
 const playBrainCalc = () => {
   const howToPlay = 'What is the result of the expression?';
-  const wrongAnswerMessage = 'is wrong answer ;(. Correct answer was';
-  const randomNumberGenerator = () => Math.floor(Math.random() * 50);
-  const randomNumberGeneratorForIndex = () => Math.floor(Math.random() * 3);
 
-  const userName = greetUser();
+  const getExample = () => {
+    const example = getRandomExpression();
+    return example[0];
+  };
 
-  console.log(howToPlay);
-
-  for (let i = 0; i < 3; i += 1) {
-    const currentIndex = randomNumberGeneratorForIndex();
-    const currentRandomNumber = randomNumberGenerator();
-    const currentRandomNumber2 = randomNumberGenerator();
-
-    const currentExperssionAsString = [
-      `${currentRandomNumber}+${currentRandomNumber2}`,
-      `${currentRandomNumber}-${currentRandomNumber2}`,
-      `${currentRandomNumber}*${currentRandomNumber2}`,
-    ];
-    const currentExperssionAsResult = [
-
-      currentRandomNumber + currentRandomNumber2,
-      currentRandomNumber - currentRandomNumber2,
-      currentRandomNumber * currentRandomNumber2,
-    ];
-
-    const rightAnswer = () => currentExperssionAsResult[currentIndex];
-    console.log(`Question: ${currentExperssionAsString[currentIndex]}`);
-    const userAnswer = +readlineSync.question('Your answer: ');
-
-    if (userAnswer !== rightAnswer()) {
-      console.log(`'${userAnswer}' ${wrongAnswerMessage} '${rightAnswer()}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
-    console.log('Correct!');
-  }
-
-  console.log(`Congratulations, ${userName}!`);
+  const rightAnswer = (currentExpression) => {
+    const elementsArr = (currentExpression.split(' '));
+    const firstNum = Number(elementsArr[0]);
+    const secondNum = Number(elementsArr[2]);
+    if (elementsArr[1] === '+') { return String(firstNum + secondNum); }
+    if (elementsArr[1] === '-') { return String(firstNum - secondNum); }
+    return String(firstNum * secondNum);
+  };
+  mainEngine(howToPlay, getExample, rightAnswer);
 };
 
 export default playBrainCalc;

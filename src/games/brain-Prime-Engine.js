@@ -5,7 +5,7 @@ const playBrainPrime = () => {
   const howToPlay = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   const getExpression = () => getRandomNumber(1, 100);
-  const rightAnswer = (currentExpression) => {
+  const getRightAnswer = (currentExpression) => {
     let counter = 0;
     for (let y = 1; y <= currentExpression; y += 1) {
       if (counter > 2) { return 'no'; }
@@ -13,7 +13,7 @@ const playBrainPrime = () => {
     }
     return 'yes';
   };
-  mainEngine(howToPlay, getExpression, rightAnswer);
+  mainEngine(howToPlay, getExpression, getRightAnswer);
 };
 
 export default playBrainPrime;

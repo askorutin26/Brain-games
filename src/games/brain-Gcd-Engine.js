@@ -6,10 +6,10 @@ const playGcd = () => {
 
   const getExpression = () => `${getRandomNumber(1, 100)} ${getRandomNumber(1, 100)}`;
 
-  const rightAnswer = (currentExpression) => {
-    const elementsArr = (currentExpression.split(' '));
-    const firstNum = Number(elementsArr[0]);
-    const secondNum = Number(elementsArr[1]);
+  const getRightAnswer = (currentExpression) => {
+    const expressionElements = (currentExpression.split(' '));
+    const firstNum = Number(expressionElements[0]);
+    const secondNum = Number(expressionElements[1]);
     let smallerNum = 0;
     let greatestDivisor = 1;
     if (firstNum < secondNum) { smallerNum = firstNum; } else { smallerNum = secondNum; }
@@ -21,7 +21,7 @@ const playGcd = () => {
     }
     return String(greatestDivisor);
   };
-  mainEngine(howToPlay, getExpression, rightAnswer);
+  mainEngine(howToPlay, getExpression, getRightAnswer);
 };
 
 export default playGcd;

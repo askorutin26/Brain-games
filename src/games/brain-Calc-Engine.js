@@ -4,20 +4,18 @@ import getRandomExpression from '../random-Expression-Generator.js';
 const playBrainCalc = () => {
   const howToPlay = 'What is the result of the expression?';
 
-  const getExample = () => {
-    const example = getRandomExpression();
-    return example[0];
-  };
+  const getExpression = () => getRandomExpression();
 
-  const rightAnswer = (currentExpression) => {
-    const elementsArr = (currentExpression.split(' '));
-    const firstNum = Number(elementsArr[0]);
-    const secondNum = Number(elementsArr[2]);
-    if (elementsArr[1] === '+') { return String(firstNum + secondNum); }
-    if (elementsArr[1] === '-') { return String(firstNum - secondNum); }
+  const getRightAnswer = (currentExpression) => {
+    const expressionElements = (currentExpression.split(' '));
+    const firstNum = Number(expressionElements[0]);
+    const secondNum = Number(expressionElements[2]);
+    if (expressionElements[1] === '+') { return String(firstNum + secondNum); }
+    if (expressionElements[1] === '-') { return String(firstNum - secondNum); }
     return String(firstNum * secondNum);
   };
-  mainEngine(howToPlay, getExample, rightAnswer);
+
+  mainEngine(howToPlay, getExpression, getRightAnswer);
 };
 
 export default playBrainCalc;

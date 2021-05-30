@@ -4,39 +4,40 @@ import mainEngine from '../index.js';
 const playBrainProgression = () => {
   const howToPlay = 'What number is missing in the progression?';
   const getExpression = () => {
-    const arrayLength = getRandomNumber(5, 10);
-    const randomDotsPosition = getRandomNumber(0, arrayLength - 1);
-    let numberInArray = getRandomNumber(1, 100);
-    const arrayOfNumbers = [];
+    const progressionLength = getRandomNumber(5, 10);
+    const randomDotsPosition = getRandomNumber(0, progressionLength - 1);
+    let numberInProgression = getRandomNumber(1, 100);
     const stepOfProgression = getRandomNumber(1, 50);
-    for (let y = 0; y < arrayLength; y += 1) {
+    const numbersProgression = [];
+    for (let y = 0; y < progressionLength; y += 1) {
       if (y === randomDotsPosition) {
-        arrayOfNumbers.push('..');
-      } else { arrayOfNumbers.push(numberInArray); }
-      numberInArray += stepOfProgression;
+        numbersProgression.push('..');
+      } else { numbersProgression.push(numberInProgression); }
+      numberInProgression += stepOfProgression;
     }
-    return arrayOfNumbers.join(' ');
+    return numbersProgression.join(' ');
   };
-  const rightAnswer = (currentExpression) => {
-    const elementsArr = (currentExpression.split(' '));
-    const numberArray = [];
-    const arrayLength = elementsArr.length;
+
+  const getRightAnswer = (currentExpression) => {
+    const expressionElements = (currentExpression.split(' '));
+    const numbersProgression = [];
+    const progressionLength = expressionElements.length;
     let step = 0;
     let dotsPosition = 0;
-    for (let i = 0; i < arrayLength; i += 1) {
-      if (elementsArr[i] === '..') {
+    for (let i = 0; i < progressionLength; i += 1) {
+      if (expressionElements[i] === '..') {
         dotsPosition = i;
-        numberArray.push('..');
-      } else { numberArray.push(Number(elementsArr[i])); }
+        numbersProgression.push('..');
+      } else { numbersProgression.push(Number(expressionElements[i])); }
     }
-    if (dotsPosition + 2 < arrayLength - 1) {
-      step = numberArray[dotsPosition + 2] - numberArray[dotsPosition + 1];
-      return (String(numberArray[dotsPosition + 1] - step));
+    if (dotsPosition + 2 < progressionLength - 1) {
+      step = numbersProgression[dotsPosition + 2] - numbersProgression[dotsPosition + 1];
+      return (String(numbersProgression[dotsPosition + 1] - step));
     }
-    step = numberArray[dotsPosition - 1] - numberArray[dotsPosition - 2];
-    return (String(numberArray[dotsPosition - 1] + step));
+    step = numbersProgression[dotsPosition - 1] - numbersProgression[dotsPosition - 2];
+    return (String(numbersProgression[dotsPosition - 1] + step));
   };
-  mainEngine(howToPlay, getExpression, rightAnswer);
+  mainEngine(howToPlay, getExpression, getRightAnswer);
 };
 
 export default playBrainProgression;

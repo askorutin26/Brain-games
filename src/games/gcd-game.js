@@ -22,7 +22,7 @@ const playGcd = () => {
       }
       return String(greatestDivisor);
     };
-    return [expressionAsString, rightAnswer()];
+    return [expressionAsString, rightAnswer(firstNum,secondNum)];
   };
   mainEngine(howToPlay, getQuestionAndAnswer);
 };

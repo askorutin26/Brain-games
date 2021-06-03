@@ -8,13 +8,13 @@
 
 
 ### How to install:
-```
-$git clone https://github.com/askorutin26/frontend-project-lvl1.git
 
-$make install
+`$git clone https://github.com/askorutin26/frontend-project-lvl1.git`
 
-$make link 
-```
+`$make install`
+
+`$make link`
+
 
 ### Games demonstrations:
 

@@ -4,16 +4,22 @@ import getRandomNumber from '../random-number-generator.js';
 const playBrainPrime = () => {
   const howToPlay = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const getExpression = () => getRandomNumber(1, 100);
-  const getRightAnswer = (currentExpression) => {
-    let counter = 0;
-    for (let y = 1; y <= currentExpression; y += 1) {
-      if (counter > 2) { return 'no'; }
-      if (currentExpression % y === 0) { counter += 1; }
-    }
-    return 'yes';
+  const getQuestionAndAnswer = () => {
+    const isPrime = (counter) => counter === 2;
+    const number = getRandomNumber(1, 100);
+    const counterGenerator = (number) => {
+      let counter = 0;
+      for (let i = 1; i <= number; i += 1) {
+        if (number % i === 0) { counter += 1; }
+      }
+      return counter;
+    };
+
+    const rightAnswer = () => (isPrime(counterGenerator(number)) ? 'yes' : 'no');
+
+    return [number, rightAnswer()];
   };
-  mainEngine(howToPlay, getExpression, getRightAnswer);
+  mainEngine(howToPlay, getQuestionAndAnswer);
 };
 
 export default playBrainPrime;

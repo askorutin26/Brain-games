@@ -10,19 +10,19 @@ const playGcd = () => {
 
     const expressionAsString = `${firstNum} ${secondNum}`;
 
-    const rightAnswer = (firstNum, secondNum) => {
+    const rightAnswer = (num1, num2) => {
       let smallerNum = 0;
       let greatestDivisor = 1;
-      if (firstNum < secondNum) { smallerNum = firstNum; } else { smallerNum = secondNum; }
+      if (num1 < num2) { smallerNum = num1; } else { smallerNum = num2; }
       for (let y = 1; y <= smallerNum; y += 1) {
-        if (firstNum % smallerNum === 0 && secondNum % smallerNum === 0) {
+        if (num1 % smallerNum === 0 && num2 % smallerNum === 0) {
           greatestDivisor = smallerNum;
           break;
-        } else if (firstNum % y === 0 && secondNum % y === 0) { greatestDivisor = y; }
+        } else if (num1 % y === 0 && num2 % y === 0) { greatestDivisor = y; }
       }
       return String(greatestDivisor);
     };
-    return [expressionAsString, rightAnswer(firstNum,secondNum)];
+    return [expressionAsString, rightAnswer(firstNum, secondNum)];
   };
   mainEngine(howToPlay, getQuestionAndAnswer);
 };

@@ -7,15 +7,15 @@ const playBrainPrime = () => {
   const getQuestionAndAnswer = () => {
     const isPrime = (counter) => counter === 2;
     const number = getRandomNumber(1, 100);
-    const counterGenerator = (number) => {
+    const divisorsCount = (num) => {
       let counter = 0;
-      for (let i = 1; i <= number; i += 1) {
-        if (number % i === 0) { counter += 1; }
+      for (let i = 1; i <= num; i += 1) {
+        if (num % i === 0) { counter += 1; }
       }
       return counter;
     };
 
-    const rightAnswer = () => (isPrime(counterGenerator(number)) ? 'yes' : 'no');
+    const rightAnswer = () => (isPrime(divisorsCount(number)) ? 'yes' : 'no');
 
     return [number, rightAnswer()];
   };

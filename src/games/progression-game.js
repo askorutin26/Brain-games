@@ -1,5 +1,5 @@
-import getRandomNumber from '../random-number-generator.js';
 import mainEngine from '../index.js';
+import getRandomNumber from '../random-number-generator.js';
 
 const playBrainProgression = () => {
   const howToPlay = 'What number is missing in the progression?';

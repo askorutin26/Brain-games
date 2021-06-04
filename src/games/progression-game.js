@@ -10,8 +10,8 @@ const playBrainProgression = () => {
     const stepOfProgression = getRandomNumber(1, 50);
     let rightAnswer = 0;
     const numbersProgression = [];
-    for (let y = 0; y < progressionLength; y += 1) {
-      if (y === randomDotsPosition) {
+    for (let i = 0; i < progressionLength; i += 1) {
+      if (i === randomDotsPosition) {
         numbersProgression.push('..');
         rightAnswer = numberInProgression;
       } else { numbersProgression.push(numberInProgression); }

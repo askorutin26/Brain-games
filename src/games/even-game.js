@@ -5,10 +5,10 @@ const playBrainEven = () => {
   const howToPlay = 'Answer "yes" if the number is even, otherwise answer "no".';
   const getQuestionAndAnswer = () => {
     const isEven = (number) => number % 2 === 0;
-    const number = getRandomNumber(1, 100);
-    const rightAnswer = isEven(number) ? 'yes' : 'no';
+    const expression = getRandomNumber(1, 100);
+    const rightAnswer = isEven(expression) ? 'yes' : 'no';
 
-    return [number, rightAnswer];
+    return [expression, rightAnswer];
   };
 
   mainEngine(howToPlay, getQuestionAndAnswer);

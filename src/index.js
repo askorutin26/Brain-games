@@ -1,19 +1,19 @@
 import readlineSync from 'readline-sync';
-import greetUser from './cli.js';
 
-const mainEngine = (howToPlay, value) => {
-  const questionsCount = 3;
-  const wrongAnswerMessage = 'is wrong answer ;(. Correct answer was';
-  const userName = greetUser();
+const questionsCount = 3;
 
+const mainEngine = (howToPlay, getQuestionAndAnswer) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log(howToPlay);
 
   for (let i = 0; i < questionsCount; i += 1) {
-    const [currentExpression, rightAnswer] = value();
-    console.log(`Question: ${currentExpression}`);
+    const [currentQuestion, rightAnswer] = getQuestionAndAnswer();
+    console.log(`Question: ${currentQuestion}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== rightAnswer) {
-      console.log(`'${userAnswer}' ${wrongAnswerMessage} '${rightAnswer}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }

@@ -24,8 +24,8 @@ const hideNumberInProgression = (originalProgression, gapPosition) => {
   return transformedProgression;
 };
 
-const getMissingNumber = (initProgression, gapPosition) => {
-  const missingNumber = initProgression[gapPosition];
+const extractProgressionElement = (initProgression, index) => {
+  const missingNumber = initProgression[index];
   return missingNumber;
 };
 
@@ -40,7 +40,7 @@ const playBrainProgression = () => {
     const gapProgression = hideNumberInProgression(fullProgression, randomGapPosition);
 
     const question = gapProgression.join(' ');
-    const rightAnswer = getMissingNumber(fullProgression, randomGapPosition).toString();
+    const rightAnswer = extractProgressionElement(fullProgression, randomGapPosition).toString();
 
     return [question, rightAnswer];
   };

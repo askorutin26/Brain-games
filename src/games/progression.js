@@ -5,10 +5,10 @@ const howToPlay = 'What number is missing in the progression?';
 
 const getProgression = (length, initNumber, step) => {
   const progression = [];
-
+  let currentNumber = initNumber;
   for (let i = 0; i < length; i += 1) {
-    progression.push(initNumber);
-    initNumber += step;
+    progression.push(currentNumber);
+    currentNumber += step;
   }
   return progression;
 };
@@ -24,18 +24,9 @@ const hideNumberInProgression = (originalProgression, gapPosition) => {
   return transformedProgression;
 };
 
-const getMissingNumber = (progressionWithoutGap, progressionWithGap) => {
-  let hiddenNumberIndex = 0;
-  let hiddenNumber = 0;
-
-  for (let i = 0; i < progressionWithGap.length; i += 1) {
-    if (progressionWithGap[i] === '..') {
-      hiddenNumberIndex = i;
-      hiddenNumber = progressionWithoutGap[hiddenNumberIndex];
-      break;
-    }
-  }
-  return hiddenNumber;
+const getMissingNumber = (initProgression, gapPosition) => {
+  const missingNumber = initProgression[gapPosition];
+  return missingNumber;
 };
 
 const playBrainProgression = () => {
@@ -49,7 +40,7 @@ const playBrainProgression = () => {
     const gapProgression = hideNumberInProgression(fullProgression, randomGapPosition);
 
     const question = gapProgression.join(' ');
-    const rightAnswer = getMissingNumber(fullProgression, gapProgression).toString();
+    const rightAnswer = getMissingNumber(fullProgression, randomGapPosition).toString();
 
     return [question, rightAnswer];
   };

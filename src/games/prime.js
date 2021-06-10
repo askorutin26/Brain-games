@@ -3,23 +3,18 @@ import getRandomNumber from '../random-number-generator.js';
 
 const howToPlay = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (number) => {
-  let counter = 0;
-  const squareRoot = Math.sqrt(number);
-  for (let i = 1; i <= squareRoot; i += 1) {
-    if (counter > 2 && squareRoot % i === 0) {
-      counter += 1;
-      break;
-    } else if (squareRoot % i === 0) { counter += 1; }
+  if (number === 1) { return false; }
+  const squareRoot = Math.floor(Math.sqrt(number));
+  for (let i = 2; i <= squareRoot; i += 1) {
+    if (number % i === 0) { return false; }
   }
-  return (counter === 2);
+  return true;
 };
 
 const playBrainPrime = () => {
   const getQuestionAndAnswer = () => {
-    const getRightAnswer = (number) => (isPrime(number) ? 'yes' : 'no');
-
     const question = getRandomNumber(1, 100);
-    const rightAnswer = getRightAnswer(question);
+    const rightAnswer = isPrime(question) ? 'yes' : 'no';
 
     return [question, rightAnswer];
   };

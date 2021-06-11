@@ -3,7 +3,7 @@ import getRandomNumber from '../random-number-generator.js';
 
 const howToPlay = 'What number is missing in the progression?';
 
-const getProgression = (length, initNumber, step) => {
+const makeProgression = (length, initNumber, step) => {
   const progression = [];
   let currentNumber = initNumber;
   for (let i = 0; i < length; i += 1) {
@@ -18,16 +18,17 @@ const hideNumberInProgression = (originalProgression, gapPosition) => {
   const { length } = originalProgression;
 
   for (let i = 0; i < length; i += 1) {
-    if (i === gapPosition) { transformedProgression.push('..'); } else { transformedProgression.push(originalProgression[i]); }
+    if (i === gapPosition) {
+      transformedProgression.push('..');
+    } else {
+      transformedProgression.push(originalProgression[i]);
+    }
   }
 
   return transformedProgression;
 };
 
-const extractProgressionElement = (initProgression, index) => {
-  const missingNumber = initProgression[index];
-  return missingNumber;
-};
+const extractProgressionElement = (initProgression, index) => initProgression[index];
 
 const playBrainProgression = () => {
   const getQuestionAndAnswer = () => {
@@ -36,7 +37,7 @@ const playBrainProgression = () => {
     const randomNumber = getRandomNumber(1, 100);
     const randomStep = getRandomNumber(1, 50);
 
-    const fullProgression = getProgression(randomLength, randomNumber, randomStep);
+    const fullProgression = makeProgression(randomLength, randomNumber, randomStep);
     const gapProgression = hideNumberInProgression(fullProgression, randomGapPosition);
 
     const question = gapProgression.join(' ');

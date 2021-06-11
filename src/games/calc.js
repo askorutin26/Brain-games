@@ -4,21 +4,16 @@ import getRandomNumber from '../random-number-generator.js';
 const howToPlay = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 const calculate = (operand1, operator, operand2) => {
-  let result = 0;
   switch (operator) {
     case '+':
-      result = operand1 + operand2;
-      break;
+      return operand1 + operand2;
     case '-':
-      result = operand1 - operand2;
-      break;
+      return operand1 - operand2;
     case '*':
-      result = operand1 * operand2;
-      break;
+      return operand1 * operand2;
     default:
       throw new Error(`Wrong operator: ${operator}!`);
   }
-  return result;
 };
 const getExpression = (operand1, operator, operand2) => `${operand1} ${operator} ${operand2}`;
 

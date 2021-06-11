@@ -4,21 +4,13 @@ import getRandomNumber from '../random-number-generator.js';
 const howToPlay = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (num1, num2) => {
-  let smallerNum = 0;
-  let greatestDivisor = 1;
-  if (num1 < num2) {
-    smallerNum = num1;
-  } else {
-    smallerNum = num2;
+  if (num1 === 0 || num2 === 0) {
+    return num1 + num2;
   }
-
-  for (let y = 1; y <= smallerNum; y += 1) {
-    if (num1 % smallerNum === 0 && num2 % smallerNum === 0) {
-      greatestDivisor = smallerNum;
-      return greatestDivisor;
-    } if (num1 % y === 0 && num2 % y === 0) { greatestDivisor = y; }
+  if (num1 > num2) {
+    return getGcd(num1 % num2, num2);
   }
-  return greatestDivisor;
+  return getGcd(num1, num2 % num1);
 };
 
 const playGcd = () => {

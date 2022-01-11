@@ -29,7 +29,7 @@ A set of mini games that runs in console.
 
 
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/askorutin26/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/askorutin26/frontend-project-lvl1/actions)
+[![hexlet-check](https://github.com/askorutin26/frontend-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/askorutin26/frontend-project-lvl1/actions/workflows/hexlet-check.yml)
 ### CodeClimate status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/341dd28fb6f5ec5ad776/maintainability)](https://codeclimate.com/github/askorutin26/frontend-project-lvl1/maintainability)
 ### Eslint status:

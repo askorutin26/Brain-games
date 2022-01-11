@@ -6,6 +6,7 @@ A set of mini games that runs in console.
 <a/>
 Decide whether a number is even.
 `$make brain-even`
+
 * brain-calc 
 <a/>
 Calculate the given expession.

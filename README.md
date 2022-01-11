@@ -2,19 +2,23 @@
 ## About 
 A set of mini games that runs in console.
 ### Games:
-* brain-even *
+* brain-even 
+<a/>
 Decide whether a number is even.
 `$make brain-even`
 
-* brain-calc *
+* brain-calc 
+<a/>
 Calculate the given expession.
 `$make brain-calc`
 
-* brain-gcd *
+* brain-gcd 
+<a/>
 Find the greatest common devisor.
 `$make brain-gcd`
 
-* brain-prime *
+* brain-prime 
+<a/>
 Decide whether a number is prime.
 `$make brain-prime`
 

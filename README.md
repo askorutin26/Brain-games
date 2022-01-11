@@ -10,6 +10,7 @@ Decide whether a number is even.
 * brain-calc 
 <a/>
 Calculate the given expession.
+<a/>
 `$make brain-calc`
 
 * brain-gcd 

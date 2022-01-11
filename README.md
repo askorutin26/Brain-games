@@ -1,6 +1,15 @@
 
 ## About 
 A set of mini games that runs in console.
+
+### How to install:
+
+`$git clone https://github.com/askorutin26/frontend-project-lvl1.git`
+
+`$make install`
+
+`$make link`
+
 ### Games:
 * brain-even 
   + Decide whether a number is even.
@@ -25,15 +34,6 @@ A set of mini games that runs in console.
 [![Maintainability](https://api.codeclimate.com/v1/badges/341dd28fb6f5ec5ad776/maintainability)](https://codeclimate.com/github/askorutin26/frontend-project-lvl1/maintainability)
 ### Eslint status:
 [![Node.js CI](https://github.com/askorutin26/frontend-project-lvl1/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/askorutin26/frontend-project-lvl1/actions/workflows/node.js.yml)
-
-
-### How to install:
-
-`$git clone https://github.com/askorutin26/frontend-project-lvl1.git`
-
-`$make install`
-
-`$make link`
 
 
 ### Games demonstrations:
